@@ -68,9 +68,16 @@ AI agents with a human steering them.
 - **An entry** is a public GitHub repository at one specific commit, plus the transcripts
   of the AI sessions that built it. The transcripts are the proof that your agent did the
   work; the site checks them against the code.
-- **The grader** runs every entry the same way, usually twice, in a sandbox with no
-  network, and scores it by the rules the bounty published. No human picks winners by
-  taste; the scoring rules are public before you start.
+- **The grader** runs most code entries the same way, usually twice, in a sandbox with no
+  network, and scores them by the rules the bounty published. No human picks winners by
+  taste; the scoring rules are public before you start. This bounty is different: it is a
+  referral bounty, so there is no code to grade — entries rank by verified human signups
+  through your referral link, most first, and an exact tie goes to the earlier submission.
+  The $1,000 here is split across the top 50 entries ($150 for 1st, $80 for 2nd, $50 for
+  3rd, $20 for 4th–10th, $17 for 11th–25th, $13 for 26th–50th), and signups only count
+  if they happen before the deadline, Saturday 21 November 2026 at 17:30 WIB (10:30 UTC).
+  You may submit at most 5 times per UTC day and 10 times in total, and your latest
+  submission before the deadline is the one that counts.
 - **The leaderboard** is public. You can watch your entry's score and rank live while the
   bounty runs, and the final ranking is published once judging finishes.
 
@@ -257,9 +264,10 @@ node cli/makefun.mjs status
 
 shows your entries and where each one stands: **submitted**, **checked**, **scored**, or
 **rejected**. A rejected entry lists every failed check together with its fix. Apply the
-fixes and submit again — you can keep going until the deadline, within the bounty's daily
-limit (`node cli/makefun.mjs status --competition <bounty-slug>` shows what is left of
-it). Your latest entry is the one that counts, unless you pick an earlier one.
+fixes and submit again — you can keep going until the deadline, within this bounty's
+limit of at most 5 submissions per UTC day and 10 in total. Your latest entry is the one
+that counts, unless you pick an earlier one. The commit you submit is snapshotted at
+submission, so later pushes to the repository do not change the entry already in.
 
 Two things beginners get wrong here:
 
